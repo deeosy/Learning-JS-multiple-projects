@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coin flip game</title>
+</head>
+<body>
+
+  <!-- <button onclick="
+    let heads = '';
+    heads = 'heads';
+    ">
+    Head
+  </button>
+  <button>Tails</button> -->
+
+
+  <!-- <button onclick="
+    let randomNumber = Math.random();
+    // using the turner operator(truthy & falsy) for the first time. below shows how it was used. this shortcut was used instead of the other commented method below which will give the same value.
+    result = randomNumber<0.5 ? 'heads': 'tails';
+    console.log(result);
+
+
+
+
+
+
+    // compare = (result === heads) ? 'you win' : 'you loes';
+    // console.log(compare);
+
+
+
+
+
+    // {
+    //   let randomNumber = Math.random();
+    //   if (randomNumber < 0.5) {
+    //     console.log('heads');
+    //   } else {
+    //     console.log('tails');
+    //   }
+    // }
+
+    ">
+    flip
+  </button> -->
+  <button onclick="{
+    let randomNumber = Math.random();
+    console.log(randomNumber)
+    
+    result = randomNumber<0.5 ? 'heads': 'tails';
+    console.log(result);
+    let guess = '';
+    guess = result === 'heads' ? 'you win': 'you lose';
+    console.log(guess);
+    }">
+    heads
+  </button>
+
+  <button onclick="{
+    let randomNumber = Math.random();
+    console.log(randomNumber)
+    
+    result = randomNumber<0.5 ? 'heads': 'tails';
+    console.log(result);
+    let guess = '';
+    guess = result === 'tails' ? 'you win': 'you lose';
+    console.log(guess);
+    }">
+    tails
+  </button>
+
+
+
+  <script>
+    // let randomNumber = Math.random();
+    // console.log(randomNumber)
+    
+    // result = randomNumber<0.5 ? 'heads': 'tails';
+    // console.log(result);
+
+    // let guess = 'heads' || 'tails';
+    // guess = result === 'heads' ? 'you win': 'you lose';
+    // console.log(guess)
+
+
+    // let guessHeads = 'heads';
+    // guessHeads = result === 'heads' ? 'you win': 'you lose';
+    // console.log(guessHeads)
+
+    // let guessTails = 'tails';
+    // guessTails = result === 'tails' ? 'you win': 'you lose';
+    // console.log(guessTails)
+
+
+  </script>
+
+</body>
+</html>

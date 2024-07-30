@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+  <script>
+/*  function function1 () {
+      console.log('hello');
+      console.log(2+2);
+    }
+
+    function1();
+*/
+
+/*  return = gets a value out of a function,    however
+    parameters = put a value into a function. 
+*/
+
+// this function below uses one parameter
+  function calculateTax(cost) {
+    console.log(cost*0.1);
+  }
+
+  calculateTax(2000);
+  calculateTax(5000);
+
+
+// this function below uses multiple parameters
+// =0.1 in the function below is how to input a default value into the parameter, e.g. lets say tax is 10% in USA so the default value is set to 0.1, but since our app has gone global we put a taxPercent value there so the tax can be changed in other countries. if 0.2 is used as a value for the parament, cool. if not it is multipled by the default value of 0.1
+
+  function calculateTax2(cost, taxPercent = 0.1) {
+    console.log(cost * taxPercent);
+  }
+
+  calculateTax2(2000, 0.2);
+
+
+  function greet (name) {
+    if (name) {
+      console.log(`Hello! ${name}`);
+    } else if (!name) {
+      console.log('Hi, there!');
+    }
+  }
+  // greet('Derrode');
+  // greet('Simon');
+  // greet('Peter');
+  greet();
+  // greet();
+
+
+  function convertToFahrennheit(celsius) {
+    return ((celsius*(9/5))+32);     
+  }
+  console.log(convertToFahrennheit(25));
+
+  function convertToCelsius(fahrenheit) {
+    return ((fahrenheit - 32)*(5/9));
+  }
+  console.log(convertToCelsius(86));
+  
+
+  function convertTemperature(degrees, unit) {
+    if (unit === 'C') {
+      const result = convertToFahrennheit(degrees);
+      return `${result}F`;
+    } else if (unit === 'F') {
+      const result = convertToCelsius(degrees);
+      return `${result}C`;
+    }
+
+  }
+
+  console.log(convertTemperature(25, 'C'));
+  console.log(convertTemperature(86, 'F'));
+
+
+
+    function toKM (miles) {
+      return miles*1.6;
+    }
+    console.log(toKM(50));
+
+    function toMiles (km) {
+      return km/1.6;
+    }
+    console.log(toMiles(32));
+
+
+
+
+
+
+
+  //   function convertLength(Length, from, to) {
+  //     if (from === 'miles' && to === 'km') {
+  //       const result = toKM(Length);
+  //       return `${result} km`;
+  //     } else if (from === 'km' && to === 'miles') {
+  //       const result = toMiles(Length);
+  //       return `${result} miles`;
+  //     } else if (from === to) {
+  //       return `${Length} ${to}`;
+  //     }
+  //   }
+
+
+  //  console.log(convertLength(50, 'miles', 'km'));
+  //  console.log(convertLength(32, 'km', 'miles'));
+  //  console.log(convertLength(50, 'km', 'km'));
+
+  function convertLength(Length, from, to) {
+      if (from !== 'miles' && from !== 'km' && from !== 'ft') {
+        return `Invalid unit: ${from}`;
+      } else if (to !== 'miles' && to !== 'km' && to !== 'ft') {
+        return `Invalid unit: ${to}`;
+      }
+
+      if (from === 'miles' && to === 'km') {
+        const result = toKM(Length);
+        return `${result} km`;
+      } else if (from === 'km' && to === 'miles') {
+        const result = toMiles(Length);
+        return `${result} miles`;
+      } else if (from === to) {
+        return `${Length} ${to}`;
+      } else if (from === 'miles' && to === 'ft') {
+        return `${Length*5280} ft`;
+      } else if (from === 'km' && to === 'ft') {
+        return `${Length*3281} ft`;
+      } 
+    }
+    console.log(convertLength(5, 'miles', 'km'));
+    console.log(convertLength(5, 'miles', 'ft'));
+    console.log(convertLength(5, 'km', 'ft'));
+    console.log(convertLength(5, 'lbs', 'lbs'));
+
+
+  </script>
+
+
+
+  
+</body>
+</html>
