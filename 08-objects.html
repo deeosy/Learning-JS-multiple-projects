@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+
+  <script>
+    //how to write an object
+
+   /* const product = {
+      name: 'socks',
+      price: '1090',
+    }
+
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+      //how to change a value in an object
+    product.name = 'cotton socks';
+    console.log(product);
+
+    // how to add new values to an exsiting object
+    product.quantity = 2;
+    product.brand = 'Nike';
+    console.log(product);
+
+    //how to delete values in an object
+
+    delete product.brand;
+    console.log(product);
+
+    delete product.quantity;
+    console.log(product); */
+
+  /*  const product2 = {
+      name: 'shirt',
+      'delivery-time': '1 day',
+      // nesting another object within an object
+      rating: {
+        stars: 4.5,
+        count: 87, 
+      },
+      //we can also nest functions inside object e.g. below
+      fun: function function1() {
+        console.log('function inside object');
+      },
+
+    } 
+
+    console.log(product2);
+    // this i called the dot notation
+    console.log(product2.name);
+    // another way to write the dot notation is by using the barcket notaiton, which is written below, there r times when you will need to use this notaion instead of the dot notation.
+    console.log(product2['name']);
+    // e.g. when to write bracket notation
+    console.log(product2['delivery-time']);
+    //calling a value from object nested within another object
+    console.log(product2.rating.stars);
+    console.log(product2['rating']['count']);
+    //how we call a function nested in an object      this is called a method, just like console.log and Math.random among others we have been using so far.
+    product2.fun();
+
+    // using JSON, this stringify property for JSON helps us to change the syntax for our object product2 to an acceptable JSON syntax which uses double quotes (" ") instead of single ones (' ').
+    JSON.stringify(product2);
+    console.log(JSON.stringify(product2))
+
+    // this is the opposite for JSON.stringify    code below
+    JSON.parse(JSON.stringify(product2));
+    console.log(JSON.parse(JSON.stringify(product2))); */
+
+
+    // shortcuts for Objects
+
+
+    const object3 = {
+      message: 'Good job!', 
+    }
+    const object4 = {
+      message: 'Good job!',
+      price: '799',
+    }
+    // const message = object4.message;
+    // can also be write as the code below.     we call this destructuring the object, its used to take out the values from the objects
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+      // message: message,
+      message,
+    }
+    console.log(object5);
+
+    
+
+    // shorthand method syntax used on function in objects in the code below
+    const object6 = {
+    //   method: function function1() {
+    //     console.log('method')
+    //   }
+
+    // all the code above can be written in a short hand like this code below
+    method() {
+      console.log('method')
+    }
+  }
+
+    object6.method();
+
+
+    
+
+
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
