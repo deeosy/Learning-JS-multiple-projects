@@ -28,7 +28,6 @@
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
-
     localStorage.removeItem('score');
   ">
     Reset Score
@@ -46,7 +45,9 @@
     // another greater shortcut for writing the code below is by using the default operator above this comment which means if not true then false
     //u can also write the below code as if (!score) {}
 
-    /* if (score === null) {
+    /*
+    let score = JSON.parse(localStorage.getItem('score'));
+    if (score === null) {
       score = {
         wins: 0,
         losses: 0,
