@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <button onclick="
+    showQty.innerHTML = `Cart quantity: ${cartQuantity}`;
+    ">
+    Show Quantity
+  </button>
+
+  <button onclick=" updateCartQuantity(1); ">
+    Add to Cart
+  </button>
+
+  <button onclick=" updateCartQuantity(2); ">
+    +2
+  </button>
+
+  <button onclick=" updateCartQuantity(3); ">
+    +3
+  </button>
+
+  <button onclick=" updateCartQuantity(4); ">
+    +4
+  </button>
+
+  <button onclick=" updateCartQuantity(5);
+    ">
+    +5
+  </button>
+
+  <button onclick=" updateCartQuantity(-1); ">
+    Remove from cart
+  </button>
+
+  <button onclick=" updateCartQuantity(-2); ">
+    -2
+  </button>
+
+  <button onclick=" updateCartQuantity(-3); ">
+    -3
+  </button>
+
+  <button onclick="
+  cartQuantity = 0;
+  showQty.innerHTML = `Cart quantity: ${cartQuantity}. Cart was reset.`;
+  ">
+    Reset Cart
+  </button>
+
+
+  <p id="showQty"></p>
+
+  <script>
+    let cartQuantity = 0;
+    let showQty = document.querySelector('#showQty');
+    showQty.innerHTML = `Cart quantity: ${cartQuantity}`;
+
+    // let name = "Derrode";
+    // console.log(`My name is: ${name}`);
+
+    // let cost = 5 + (2*3) + 9;
+    // console.log(`Cost of food: $${cost}`);
+
+    // let tax = cost*0.1;
+    // console.log(`Tax (10%): $${tax}`); 
+
+    // let totalCost = cost+tax;
+    // console.log(`Total cost: $${totalCost}`);
+
+    function updateCartQuantity(change) {
+      if (cartQuantity + change > 10) {
+        showQty.innerHTML = 'The cart is full';
+        return;
+
+      } else if (cartQuantity + change < 0) {
+        showQty.innerHTML = 'Not enough items in the cart';
+        return;
+        
+      } else {
+        cartQuantity += change;
+        showQty.innerHTML = `Cart quantity: ${cartQuantity}`;        
+      }
+    }
+
+
+
+
+    // // we have basketball product with price of 2095 cents create an object for it
+    // const product1 = {
+    //   productName: 'Orange Basketball',
+    //   price: 2095,      
+    // }
+
+    // const product2 = {      
+    //   productName: 'White football',
+    //   price: 3195,
+    // }
+
+
+    // console.log(product1)
+
+    // // add 500 cent to the previous price
+    // product1.price = product1.price + 500;
+    // console.log(product1)
+
+    // // add delivery property to the object basketball
+    // product1['delivery-time'] = '3 days';
+
+    // console.log(product1);
+
+    // function comparePrice(product3, product4) {
+
+    //   if (product3.price < product4.price) {
+    //     return product3;
+    //   } else {
+    //     return product4;
+    //   } 
+    // } 
+    
+    // const product3 = {
+    //   productName: 'Orange Basketball',
+    //   price: 2095,      
+    // };
+
+    // const product4 = {      
+    //   productName: 'White football',
+    //   price: 2195,
+    // };
+
+    // console.log(comparePrice(product3, product4));
+
+
+    // function isSameProduct(product5, product6) {
+    //   if (product5.productName === product6.productName  &&  product5.price === product6.price) {
+    //     return true;
+    //   } else {
+    //     return false;
+    //   }
+    // }
+
+    // const product5 = {      
+    //   productName: 'White football',
+    //   price: 2195,
+    // };
+
+    // const product6 = {      
+    //   productName: 'White football',
+    //   price: 2195,
+    // };
+
+    // console.log(isSameProduct(product5, product6));
+
+    // console.log('Good Morning'.toLocaleLowerCase());
+
+    // console.log('Good Morning'.repeat(2));
+
+
+
+  </script>
+
+
+
+</body>
+</html>

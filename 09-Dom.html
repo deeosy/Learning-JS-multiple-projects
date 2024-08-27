@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+</head>
+<body>
+
+  <button>Hello</button>
+  <button class="js-button">second button</button>
+
+
+
+
+  <script>
+    // this code below will get the 1st button on the web page
+    console.log(document.querySelector('button'));
+    console.log(document.querySelector('button').innerHTML);
+    // how to change the text inside an html element, code below
+    document.querySelector('button')
+      .innerHTML = 'Changed';
+
+    document.querySelector('.js-button')
+      .innerHTML = 'slowly';
+
+    const buttonElement = document.querySelector('.js-button');
+    console.log(buttonElement);
+
+
+
+    
+
+
+
+
+
+    // these are propertiese for document
+    // document.title = '123';
+    // document.body
+    // document.body.innerHTML
+
+    // these are some functions/ method of document 
+    // document.querySelector()
+
+    // document.body.innerHTML = 'hello';
+    // document.title ='Good job!';
+    // you can also write html elements and text using javaScript as shown below
+    // document.body.innerHTML = '<button>Bad Ass</button>';
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9a DOM Exercise</title>
+</head>
+<body>
+
+  <button id="js-btn9a">9a</button>
+  <button id="js-btn9b">9b</button>
+
+  <button onclick="
+    heads()
+  ">heads</button>
+  <button onclick="
+    tails()
+  ">tails</button>
+
+  <p id="js-displayHere"></p>
+  <br><br>
+  <input type="text" name="user" id="js-name" placeholder="Name" onkeydown="enterEvent()">
+  <input type="submit" name="" id="js-sendBtn" value="Send" onclick="showName()" >
+  <p id="showName"></p>
+
+
+
+
+
+
+
+  <script>
+    let btn9A = document.querySelector('#js-btn9a');
+    console.log(btn9A);
+
+    let btn9B= document.querySelector('#js-btn9b');
+    btn9B.innerHTML = '9b done!';
+    console.log(btn9B);
+
+    function heads() {
+      let clickHeads = document.querySelector('#js-displayHere').innerText = 'You chose: heads';
+    }
+
+    function tails() {
+      let clickHeads = document.querySelector('#js-displayHere').innerText = 'You chose: tails';
+    }
+    function showName(){
+      let userName = document.querySelector('#js-name').value;
+      // note by default .value in the above code is a string so using it on a name dont need to convert it to a string with the function String().
+    document.querySelector('#showName').innerHTML = `Your name is: ${userName}`;
+    }
+
+    function enterEvent() {
+      if (event.key === 'Enter') {
+        showName();
+      }
+    }
+
+
+
+
+
+
+
+
+  </script>
+  
+</body>
+</html>
