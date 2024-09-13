@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle between buttons</title>
+  <style>
+    .gm{
+      padding: 10px 20px;
+    }
+
+    .gaming{
+      padding: 10px 20px;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="">
+    <button class="gm js-button1" onclick="toggleBtwBtn('.js-button1')">
+      Gaming
+    </button>
+
+    <br><br><br><br>
+
+    <button class="gm js-button2" onclick="toggleBtwBtn('.js-button2')">
+      Music
+    </button>
+
+    <br><br><br>
+
+    <button class="gm js-button3" onclick="toggleBtwBtn('.js-button3')">
+      Tech
+    </button>
+  </div>
+
+
+
+
+
+  <script>
+    // these two functions adds a style to one button at a time by removing the style from the previously clicked button and adding it to the newly clicked button
+
+    // this function a style to the button clicked on
+    function toggleBtwBtn (btnSelector) {
+      const btnClicked = document.querySelector(btnSelector);
+      if (!btnClicked.classList.contains('gaming')) {
+        // we turn off the previous btn b4 we on the next btn
+        offPreviousBtn();
+        btnClicked.classList.add('gaming');
+      } else {
+        btnClicked.classList.remove('gaming')
+      } 
+    }
+
+// this function removes the style on the previously clicked function
+    function offPreviousBtn () {
+      const previousBtn = document.querySelector('.gaming');
+      if (previousBtn) {
+        previousBtn.classList.remove('gaming')
+      }
+    }
+  </script>
+  
+</body>
+</html>

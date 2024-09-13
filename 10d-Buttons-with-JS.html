@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons with JS</title>
+  <style>
+    .gm{
+      padding: 10px 20px;
+    }
+
+    .gaming{
+      padding: 10px 20px;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .musicDark{
+      padding: 10px 20px;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+    .techMusic{
+      padding: 10px 20px;
+      border: none;
+      background-color: black;
+      color: white;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="">
+    <button class="gm js-gaming" onclick="isToggled();">
+      Gaming
+    </button>
+    <br><br><br><br>
+    <button class="gm js-music" onclick="musicToggle()">
+      Music
+    </button>
+
+    <br><br><br>
+
+    <button class="gm js-tech " onclick="techToggle()">Tech</button>
+  </div>
+
+
+
+
+
+  <script>
+    let btn = document.querySelector('.js-gaming');
+
+    function isToggled() {
+      let btn = document.querySelector('.js-gaming');
+      if (!btn.classList.contains('gaming')) {
+        btn.classList.add('gaming');
+      } else if (btn.classList.contains('gaming')) {
+        btn.classList.remove('gaming');
+      }
+    }
+
+
+    let musicBtn = document.querySelector('.js-music');
+
+    function musicToggle () {
+      if(!musicBtn.classList.contains('musicDark')) {
+        musicBtn.classList.add('musicDark');
+      } else if (musicBtn.classList.contains('musicDark')) {
+        musicBtn.classList.remove('musicDark');
+      }
+    }
+
+    function techToggle () {
+      let techbtnToggle = document.querySelector('.js-tech').classList.toggle('techMusic');
+    }
+
+  </script>
+  
+</body>
+</html>
