@@ -9,10 +9,12 @@
       color: red;
     }
     .calBtn{
-      padding: 10px 20px;
+      padding: 12px 20px;
       color: white;
       background-color: #367922;
       border-color: #367922;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
       font-size: medium;
 
@@ -21,7 +23,8 @@
       padding: 10px 15px;
       outline: none;
       font-size: medium;
-
+      border-radius: 6px;
+      border: 1px solid black;
     }
   </style>
 </head>
@@ -93,6 +96,7 @@
       } else {
         buttonElement.innerHTML = 'Subscribe';
       }
+
       // for safety and no mistake, which might be caused my space in your text we will us .innerText rather done innerHTML
     }
 

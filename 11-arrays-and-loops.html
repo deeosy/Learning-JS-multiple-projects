@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+  
+  
+  
+  
+  <script>
+    // const myArray = [10, 20, 30];
+
+    // console.log(myArray);
+    // console.log(myArray[2])
+    // myArray[0] = 40;
+    // console.log(myArray);
+    // myArray.push(100);
+    // console.log(myArray);
+    // myArray.splice(0,1)
+    // console.log(myArray);
+
+    // // how to check if an array is an array
+    // console.log(Array.isArray([1,2]));
+
+    // let b = 1;
+    // while (b <= 5) {
+    //   console.log(b);
+    //   b++;
+    // }
+
+    // for (let i = 1; i <= 5; i++) {
+    //   console.log(i)
+    // }
+
+
+    // // best time to use a while Loop otherwise use a for loop all the time
+    // // use a while loop when it is a non-standard loop. example of a non-standard loop below, which does not take a increment step
+
+    // let randomNumber = 0;
+
+    // while (randomNumber < 0.5) {
+    //   randomNumber = Math.random();
+    // }
+    // console.log(randomNumber);
+
+
+    // const todoList = [
+    //   'make dinner',
+    //   'wash dishes',
+    //   'watch youtube'
+    // ]
+ 
+    // for(let i = 0; i< todoList.length; i++) {
+    //   const value = todoList[i];
+    // }
+
+    const number = [1,2,3,];
+
+    let total = 0;
+
+    for (let i = 0; i< number.length; i++) {
+      const nums = number[i];
+      total = total + nums;
+    }
+    console.log(total);
+
+
+    // doubling the numbers in the number array from above.
+    const numsDoubled = []
+    for(let i = 0; i < number.length; i++){
+      const nums = number[i];
+      const doubled = nums*2;
+      numsDoubled.push(doubled);
+    }
+    console.log(numsDoubled);
+
+
+     
+  </script>
+  
+</body>
+</html>
