@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM- Projects</title>
+  <style>
+    .js-errorMessage{
+      color: red;
+    }
+    .calBtn{
+      padding: 10px 20px;
+      color: white;
+      background-color: #367922;
+      border-color: #367922;
+      cursor: pointer;
+      font-size: medium;
+
+    }
+    .costInput{
+      padding: 10px 15px;
+      outline: none;
+      font-size: medium;
+
+    }
+  </style>
+</head>
+<body>
+
+  <p>YouTube Subscribe Button</p>
+  <button onclick="
+    subscribeBtn();
+  " class="js-subscribeBtn">Subscribe</button>
+
+  <br><br><br><br>
+
+  <p>Amazon Shipping Calculator</p>
+
+  <input type="text" placeholder="Cost of order" class="js-costInput costInput" onkeydown="handleCostKeydown(event)">
+
+  <button class="calBtn" onclick="
+    calculateTotal()
+  ">Calculate</button>
+
+  <p class="js-totalCost js-errorMessage"></p>
+  <!-- <p class="js-errorMessage"></p> -->
+
+
+
+  <input type="text" name="" id="js-input" placeholder="Type Something" onkeyup="showInputWhileTyping()">
+  <p id="js-typing"></p>
+  <script>
+
+    function showInputWhileTyping() {
+      let inputElement = document.querySelector('#js-input');
+      document.querySelector('#js-typing').innerHTML = inputElement.value;
+    }
+
+
+
+    function handleCostKeydown (event) {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
+    function calculateTotal() {
+      const inputElement = document.querySelector('.js-costInput');
+      let cost = (Number(inputElement.value)*100);     
+      // reset all previous messages
+      document.querySelector('.js-errorMessage').innerHTML = '';
+      document.querySelector('.js-totalCost ').innerHTML = '';
+
+      console.log(cost);
+
+      if (cost < 0) {
+        document.querySelector('.js-errorMessage').innerHTML = `Error: cost cannot be less than $0`;
+        return;
+      } 
+
+      if (cost < 4000) {
+        cost =((cost  + 1000)/100);
+      }
+      document.querySelector('.js-totalCost').innerHTML = `$${cost}`
+    }
+
+
+
+    function subscribeBtn() {      
+      const buttonElement =  document.querySelector('.js-subscribeBtn');
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+      }
+      // for safety and no mistake, which might be caused my space in your text we will us .innerText rather done innerHTML
+    }
+
+  </script>
+  
+</body>
+</html>

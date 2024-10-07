@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM-Projects</title>
+  <style>
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .subscribeBtn{
+      border: none;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+    .is-subscribed{
+      background-color: rgb(240,240,240);
+      color: black;
+    }
+
+    .cost-input{
+      font-size: 15px;
+      padding: 10px 10px;
+      
+    }
+    .calcBtn{
+      font-size: 15px;
+      padding: 12px 12px;
+      background-color: green;
+      border: none;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <p>YouTube Subscribe Button</p>
+  <button onclick="
+    subscribeBtn();
+  " class="js-subscribeBtn subscribeBtn">Subscribe</button>
+
+  <p>Amazon Shipping Calculator</p>
+
+  <input type="text" placeholder="Cost of order" class="js-costInput cost-input" onkeydown="handleCostKeydown(event)">
+
+  <button onclick="calculateTotal()" class="calcBtn">
+    Calculate
+  </button>
+
+  <p class="js-totalCost"></p>
+
+
+
+  <input type="text" name="" id="js-input" placeholder="Type Something" onkeyup="showInputWhileTyping()">
+  <p id="js-typing"></p>
+  <script>
+
+    function showInputWhileTyping() {
+      let inputElement = document.querySelector('#js-input');
+      document.querySelector('#js-typing').innerHTML = inputElement.value;
+    }
+
+
+
+    function handleCostKeydown (event) {
+      if (event.key === 'Enter') {
+        calculateTotal();
+      }
+    }
+
+    function calculateTotal() {
+      const inputElement = document.querySelector('.js-costInput');
+      // anytime we get a value from the DOM the output will be a string these the comments below
+      // anytime you use the .value property it changes the value to the item to a string so if you have to use the value to do math you will have to change the string to a number with the Number() function. see code below.
+      let cost = (Number(inputElement.value)*100);
+      console.log(cost);
+      if (cost < 4000) {
+        cost =((cost  + 1000)/100);
+      }
+      document.querySelector('.js-totalCost').innerHTML = `$${cost}`
+    }
+
+
+
+    function subscribeBtn() {      
+      const buttonElement =  document.querySelector('.js-subscribeBtn');
+      if (buttonElement.innerText === 'Subscribe') {
+        buttonElement.innerHTML = 'Subscribed';
+        buttonElement.classList.add('is-subscribed') //adds the is-subscribed class from css to the button 
+      } else {
+        buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed') //removes the is-subscribed class from the button
+      }
+      // for safety and no mistake, which might be caused my space in your text we will us .innerText rather done innerHTML
+    }
+
+  </script>
+  
+</body>
+</html>
