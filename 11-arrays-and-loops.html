@@ -62,25 +62,83 @@
     //   const value = todoList[i];
     // }
 
-    const number = [1,2,3,];
+    // const number = [1,2,3,];
 
-    let total = 0;
+    // let total = 0;
 
-    for (let i = 0; i< number.length; i++) {
-      const nums = number[i];
-      total = total + nums;
-    }
-    console.log(total);
+    // for (let i = 0; i< number.length; i++) {
+    //   const nums = number[i];
+    //   total = total + nums;
+    // }
+    // console.log(total);
 
+
+    // // doubling the numbers in the number array from above.
+    // const numsDoubled = []
+    // for(let i = 0; i < number.length; i++){
+    //   const nums = number[i];
+    //   const doubled = nums*2;
+    //   numsDoubled.push(doubled);
+    // }
+    // console.log(numsDoubled);
+
+    // const array1 = [1,2,3]; // arrays are references to a part of the computers memory
+    // const array2 = array1;  // now array2 is also pointing to that reference so if we 1st push and  log...
+    // array2.push(4);
+    // console.log(array1, array2); // you will notice array2 and array1 have the values now
+    // const array3 = array1.slice() // to avoid this behave we can use .slice() to create a copy of the array in the computers memory. so now if we push and log the values will on change in array3
+    // array3.push(5);
+    // console.log(array3);
+
+    // // destructuring of arrays : short hand
+    // const array4 =[1,2,4] // lets say we have this array called array4
+    // const [firstValue, secondValue, lastValue] = [1,2,4]
+    // console.log(firstValue);
+
+    // for(let i = 1; i <= 10; i++) {
+    //   // console.log(i)
+    //   if(i % 3 === 0) {
+    //     continue; // continue allows us to skip one iteration of the loop
+    //   }
+    //   console.log(i);
+    //   if (i === 8) {
+    //     break; //break allows us to stop a loop early just like return
+    //   }
+    //   // console.log(i);
+    // }
+    
+    // let i = 1;
+
+    // while(i <= 10) {
+    //   // console.log(i) 
+    //   if(i % 3 === 0){
+    //     i++;
+    //     continue;
+    //   }
+    //   console.log(i);
+    //   i++;
+    // }
 
     // doubling the numbers in the number array from above.
-    const numsDoubled = []
-    for(let i = 0; i < number.length; i++){
-      const nums = number[i];
-      const doubled = nums*2;
-      numsDoubled.push(doubled);
+    let doubleArray = (nums) =>{
+      const numsDoubled = [];
+
+      for(let i = 0; i < nums.length; i++){
+        const num = nums[i];
+        if(num === 0) {
+          // break; // if num is equal to 0 we want to break out of the loop
+          return numsDoubled; // if we are in a function we can also use the return statement to break out of the loop
+        }
+        numsDoubled.push(num * 2);
+      }
+      return numsDoubled;
     }
-    console.log(numsDoubled);
+
+    console.log(doubleArray([1,2,3,5,0,6]))
+    
+
+    
+
 
 
      
