@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+  <button onclick="" class="js-button" >Click</button>
+  
+  
+  
+  
+  <script>
+
+    const buttonElement = document.querySelector(".js-button")
+    const eventListener = ()=>{console.log("click")}
+
+    buttonElement.addEventListener("click",() => { //advantage of addEventListener allows us to add multiple events to one element and allows us to remove eventListener eg on line #27
+      eventListener;
+    })
+    buttonElement.removeEventListener("click", () => { // to remove eventlistener we first have save the event/ function in a variable
+      eventListener
+    })
+
+    buttonElement.addEventListener("click",() => { //advantage of addEventListener allows us to add multiple events to one element and allows us to remove eventListener eg on line #27
+      console.log("click2");
+      ;
+    })
+
+    /*
+    // hoisting allows us to create a call a function be we create it. example below.  but hoisting those not work when we create a function and save it in a variable like on line #29
+    greeting();
+    function greeting() {
+      console.log('hello')
+    }
+    
+    greeting()
+
+    const num = 2;
+
+    const function1 = function(){
+      console.log('hello 2');
+    }
+
+    function1()
+
+    const object1 = {
+      num: 2,
+      fun: function() {
+        console.log('hello3')
+      }
+    }
+    object1.fun()
+
+    function display(param){
+      console.log(param)
+    }
+    display(2);
+
+
+    function run(param){
+      param();
+    }
+
+    run(function(){
+      console.log('hello4');
+    }) 
+    */
+
+    /*
+    setTimeout(() => {
+      console.log('timeout')
+    }, 3000);
+
+    console.log('next line')
+
+    setInterval(() => {
+      console.log('interval')
+    }, 3000);
+    */
+
+    // [
+    //   'make', 'wash', 'watch'
+    // ].forEach((value, index)=>
+    //   console.log(value)  //you can omit the curly bracket if its just one line of code in the function
+    // )
+
+    // [
+    //   'make', 'wash', 'solo'
+    // ].forEach((value, index)=>{
+    //   // forEach doesnt work with continue. so what we use is the return keyword
+    //   //but we cant use break in a forEach() fucntion so we will have to use the regular for loop when we want to use break
+    //   if(value === 'wash'){
+    //     return;
+    //   }
+    //   console.log(value);
+    //   console.log(index);  //you can omit the curly bracket if its just one line of code in the function
+    // })
+
+    // const regularFunction = function(param, param2){
+    //   console.log("hello");
+    //   return 5;
+    // }
+
+    // const arrowFunction =(param, param2)=>{
+    //   console.log("hello");
+    //   return 5
+    // }
+    // arrowFunction();
+
+    // const oneParam = param =>{
+    //   console.log(param+1);
+    // }
+    // oneParam(2)
+
+    // const oneLine =() => console.log(2+3);
+    
+    // const object2 ={
+    //   method(){  // shorthand Method syntex recommend when saving a function/method in an object
+
+    //   }
+    // }
+
+
+    // learning the filter method
+    [1,-3,5] // lets filter out negative numbers from the array
+
+    console.log([1,-3,5].filter((value, index) => {
+      // if(value >=0){
+      //   return true;
+      // } else{
+      //   return false;
+      // }
+      //the code below returns the same value as the code above
+      return value >=0;
+    }))
+
+    //learning the map method
+    [1,1,3] // transforms an array and gives you another array
+    console.log([1,1,3].map((value, index) => {
+      return value *2;
+    }))
+
+    // reviewing some shorthand syntex of the arrow fuction
+    console.log([1,1,3].map((value) => value *2))
+
+
+    
+  </script>
+  
+</body>
+</html>

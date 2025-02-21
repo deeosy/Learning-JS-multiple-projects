@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Functions</title>
+  <style>
+
+  </style>
+</head>
+<body>
+  <!-- 12c. -->
+  <button class="js-finished" onclick="checking()">Start</button>
+
+  <!-- 12d -->
+  <button class="js-processing-finished" onclick="processing()">Start</button>
+  
+  <!-- 12e -->
+   <button onclick="displayAdded()
+   " class="js-add2Cart">Add to cart</button>
+   <p class="js-addedBtnDisplay"></p>
+
+   <button onclick="displayAdded2()
+   " class="js-add2Cart2">Add to cart</button>
+   <p class="js-addedBtnDisplay2"></p>
+
+   <br><br>
+
+   <button class="js-addMessage" onclick="addMessage()" >Add Message</button>
+   <button class="js-removeMessage" onclick="removeMessage()">Remove Message</button>
+  <br><br>
+
+  <button onclick="addMessage2()" >Add Message</button>
+  <button onclick="removeMessage2()">Remove Message</button>
+  
+  
+  <script>
+    // 12a. function saved in a variable
+    const add = function(){
+      console.log(2+3);
+    }
+
+    add();
+
+    // 12b function in the parameter of a function
+    function runTwice(fun){
+      fun();
+      fun();
+    }
+    // runTwice(function(){
+    //   console.log("12b")
+    // })
+    runTwice(add)
+
+
+    // 12c fuction to change text of button after 1 sec from start to Finished
+    const checking = () => {
+      setTimeout(() => {
+      document.querySelector('.js-finished').innerText = 'Finished!'
+    }, 1000)
+    }
+
+
+    // 12d function to change text of button from start, processing to finished
+    const processing = () => {
+      document.querySelector('.js-processing-finished').innerText = 'Processing...'
+    setTimeout(() => {
+      document.querySelector('.js-processing-finished').innerText = 'Finished!'
+    }, 1000);
+    }
+
+
+    // 12e. set the add to cart button to display added and remove it after 2 seconds
+    function displayAdded(){
+      let addedText = document.querySelector('.js-addedBtnDisplay');
+      addedText.innerText = 'Added';
+      setTimeout(() => {
+        addedText.innerText='';      
+      }, 2000);
+    }  
+
+    //12f
+    function displayAdded2(){
+      clearTimeout()
+      let addedText = document.querySelector('.js-addedBtnDisplay2');
+      addedText.innerText = 'Added';
+      setTimeout(() => {
+        addedText.innerText='';      
+      }, 4000);
+    } 
+
+    // //12g creating a messaaging app the document title changes every 1 sec    
+    // setInterval(() => {
+    //   if(document.title === "App"){
+    //     document.title = `2 New messages`
+    //   }else{
+    //     document.title = "App"
+    //   }
+    // }, 1000)
+
+
+    // //12h 
+    // let message = 0
+
+    // setInterval(() => {
+    //   if(document.title === "App"){
+    //     document.title = `${message} New messages`
+    //   }else{
+    //     document.title = "App"
+    //   }
+    // }, 1000)
+
+    // const addMessage = () => {
+    //   message ++;
+    // }
+
+    // const removeMessage = () => {
+    //   message --;
+    // }
+
+
+    //12i - you tube guy
+    let message2 = 0
+    let intervalId;
+    let isDisplayingNotification
+
+    displayNotification(); // this displays the notification when the page loads
+    function displayNotification(){ // this function method allows hoisting thus we can call the function before we create it like on line #128
+      if(isDisplayingNotification){  
+        return  // this stops the fucntion if we are already displaying notifications to prevent double intervals
+      }
+
+      isDisplayingNotification = true;
+      intervalId = setInterval(() => {
+        if(document.title === "App"){
+          document.title = `(${message2}) New messages`
+        }else {
+          document.title = "App"
+        }
+      }, 1000)
+    }
+
+    const stopNotification = () => {
+      isDisplayingNotification = false
+      clearInterval(intervalId)
+      document.title = "App"
+    }
+  
+
+    const addMessage2 = () => {
+      message2 ++
+      displayNotification()
+    }
+    const removeMessage2 = () => {
+      if(message2 > 0){
+        message2 --
+      }
+      if(message2 === 0){
+        stopNotification()
+      }
+    }
+
+
+
+
+
+
+    // //12i - my code, works fine i just need to make the title flash
+    // let message2 = 0
+    // const addMessage2 = () => {
+    //   message2 +=1;
+    //   if(message2 <= 0){
+    //     document.title = "App"
+
+    //   }else if(message2 >=0){
+    //     document.title= `${message2} New message`
+    //   }
+    // }
+
+    // const removeMessage2 = () => {
+    //   message2 -=1;
+    //   if(message2 <= 0){
+    //     document.title = "App"
+    //     message2=0
+    //   }else if(message2 >=0){
+    //     document.title= `${message2} New message`
+    //   }
+    // }
+
+    // 12j. 
+    const multiple = (a,b) => a*b;
+    // console.log(multiple(2,3))
+    // console.log(multiple(7,10))
+
+
+    // 12l. 
+    const countPositive= (nums) => {
+      let positiveNums = 0  // 1. saves or positive number count
+      nums.forEach(num => { // 2. checks each number in the array
+        if(num >0){
+          positiveNums ++; // 3. if number is greater than 0 add 1 to the positive number count
+        }
+      });
+      return positiveNums; //4.
+    }
+    console.log(countPositive([1,-3,5]));
+    console.log(countPositive([-2,3,-5,7,10]));
+
+    // 12m. 
+    const addNum = (array, num) => {  //creates a function and adds 2 to the values as a new array
+      const addTwoToArray = array.map((value, i) => { // map creates a new array which we save in a variable and adds 2 to the values in the new variable
+        return value +2
+      })
+      return addTwoToArray
+    }
+
+    console.log(addNum([1,2,3],2));
+    console.log(addNum([-2,-1,0,99],2));
+
+    // 12n. 
+
+    function removeEgg(foods){ // filters the array and gives a new array remove 'egg'
+      return foods.filter((food) => food !== 'egg'); // display a new array with out 'egg'
+    }
+
+    console.log(removeEgg(['egg','apple','egg','egg','ham']))
+
+    // 12o. 
+
+    function removeFirstTwoEgg(foods){ 
+      let eggCount = 0
+      return foods.filter((food) => {
+        if(food === 'egg' && eggCount < 2){
+          eggCount ++
+          return false
+        }
+        return true
+      })
+      
+    }
+
+    console.log(removeFirstTwoEgg(['egg','apple','egg','egg','ham']))
+
+
+
+  </script>
+  
+</body>
+</html>

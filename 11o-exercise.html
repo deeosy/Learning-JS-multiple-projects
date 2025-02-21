@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrays and Loops Exercise</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+  
+  
+  
+  
+  <script>
+    // function countWords(words) {
+    //   const result = {}
+    //   for(let i = 0; i < words.length; i++){
+    //     const word = words[i];
+    //     console.log(word)
+    //   }
+    //   if(!result[word]){
+    //     result[word] = 1;
+    //   } else{
+    //     result[word]++;
+    //   }
+    //   return result;
+    // } 
+
+    // console.log(countWords(['apple', 'grape', 'apple', 'apple']));
+
+
+
+    // const stringArray = ['hello', 'world', 'search', 'good', 'search'];
+    
+    // for(let i = 0; i<stringArray.length; i++) {
+    //   if(stringArray[i] === 'search') {
+    //     console.log(i);
+    //     break;
+    //   }else{
+    //     // console.log(-1)
+    //   }
+    // }
+
+    // // youtube guy solution below
+    // let words = ['hello', 'world', 'search', 'good'];
+    // // Set the index to -1 at the start (so we'll assume
+    // // the string 'search' doesn't exist in the array).
+    // // If we find the string 'search' in the array, we
+    // // will update the index.
+    // let index = -1;
+
+    // for (let i = 0; i < words.length; i++) {
+    //   if (words[i] === 'search') {
+    //     index = i;
+    //   }
+    // }
+
+    // console.log(index);
+
+
+
+    // this function below loops through an array and searchs for a word in the array and logs the index/ position the word is located in the array. if not in the array it returns -1.
+    // function findIndex(array, word) {
+    //   let index = -1;
+
+    //   for(let i = 0; i < array.length; i++) {
+    //     if(array[i] === word) {
+    //       index = i;
+    //       break;
+    //     }
+    //   }
+    //   return index;
+    // }
+
+    // console.log(findIndex(['green','red','blue','red'],'red'))
+    // console.log(findIndex(['green','red','blue','red'],'yellow'))
+
+
+    // function removeEgg(foods){
+    //   const result = []
+    //   for(let i = 0; i < foods.length; i++){
+    //     if(foods[i] ==='egg'){
+    //       continue;
+    //     }
+    //     result.push(foods[i]);
+    //   }
+    //   return result;
+    // }
+
+    // console.log(removeEgg(['egg', 'apple', 'egg','egg','ham']));
+
+
+    //  this function removes only the 1st and 2nd eggs in the array and log the rest of the array
+    // function removeFirstAndSecondEgg(foods){
+    //   const result = []
+    //   let eggsRemoved = 0;
+    //   for(let i = 0; i < foods.length; i++){
+    //     if(foods[i] ==='egg' && eggsRemoved < 2){
+    //       eggsRemoved++;
+    //       continue;
+    //     }
+    //     // console.log(eggsRemoved)
+    //     result.push(foods[i]);
+    //   }
+    //   return result;
+    // }
+
+    // console.log(removeFirstAndSecondEgg(['egg', 'apple', 'egg','egg','ham']));
+
+    // //we using .reverse() to reverse the array to remove the last 2 eggs from the array
+    // function removeFirstAndSecondEgg(foods){
+    //   let reversedFoods = foods.reverse();
+
+    //   const result = []
+    //   let eggsRemoved = 0;
+    //   for(let i = 0; i < foods.length; i++){
+    //     if(reversedFoods[i] ==='egg' && eggsRemoved < 2){
+    //       eggsRemoved++;
+    //       continue;
+    //     }
+    //     // console.log(eggsRemoved)
+    //     result.push(reversedFoods[i]);
+    //   }
+    //   return result.reverse();
+    // }
+
+    // console.log(removeFirstAndSecondEgg(['egg', 'apple', 'egg','egg','ham']));
+
+
+    // // we used .slice() to create a new reference in the computers memory to be able to create a copy of the array without changing the old array
+    //   function removeFirstAndSecondEgg(foods){
+    //   const foodsCopy = foods.slice(0, foods.length)
+    //   const reversedFoods = foodsCopy.reverse();
+
+    //   const result = []
+    //   let eggsRemoved = 0;
+    //   for(let i = 0; i < foods.length; i++){
+    //     if(reversedFoods[i] ==='egg' && eggsRemoved < 2){
+    //       eggsRemoved++;
+    //       continue;
+    //     }
+    //     // console.log(eggsRemoved)
+    //     result.push(reversedFoods[i]);
+    //   }
+    //   return result.reverse();
+    // }
+    // // so the result of food will be different from that of the result from the function because .slice() stores the array in a differen
+    // const foods = ['egg', 'apple', 'egg','egg','ham'];
+    // console.log(removeFirstAndSecondEgg(foods));
+    // console.log(foods);
+
+
+    // // arr.reduce((a,b)=>a+b, 10)
+
+    // let workers =  [
+    //   {
+    //     'first name' : "Jennie Wisoky",
+    //     "email": "Juvenal89@yahoo.com"
+    //   }
+    // ]
+
+    // console.log(workers[0]['first name'])
+
+    // function fizzBuzz(nums) {
+    //   const arr = [];
+
+    //   for(let i = 1; i <= nums; i++) {
+    //     // console.log(i);
+    //     if(i % 5 === 0 && i % 3 === 0) {
+    //       arr.push('fizzbuzz');
+    //     } else if(i % 5 === 0) {
+    //       arr.push('buzz');
+    //     } else if(i % 3 === 0) {
+    //       arr.push('fizz');        
+    //     } else {
+    //       arr.push(i)
+    //     }
+    //   }
+    //   console.log(arr);
+    // }
+    // fizzBuzz(50);
+    
+    // this fucntion sort out words in an array and returns -1 if the word has only been appear ones
+    function findIndex(array, word) {
+      
+      for(let i = 0; i < array.length; i++) {
+        if(array[i] === word) {
+          // console.log(i)
+          return i;
+        }
+        // console.log(i)
+      }
+      return -1;
+    }
+    // console.log(findIndex(['green','yellow','red','blue','red'],'red'))
+    
+    // this function takes the function above and pushes the words that appear once into another array
+    function unique(array) {      
+      const result =[];
+      for(let i =0; i < array.length; i++) {
+        const word = array[i];
+        if(findIndex(result,word) === -1){
+          result.push(word);
+        }        
+      }
+      return result;        
+    }
+      
+    console.log(unique(['green','red','blue','red']))
+    console.log(unique(['red','green','green','red']));
+
+
+
+
+  </script>  
+</body>
+</html>
