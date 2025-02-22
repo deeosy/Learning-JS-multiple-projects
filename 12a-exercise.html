@@ -11,28 +11,26 @@
 </head>
 <body>
   <!-- 12c. -->
-  <button class="js-finished" onclick="checking()">Start</button>
+  <button class="js-finished" >Start</button>
 
   <!-- 12d -->
-  <button class="js-processing-finished" onclick="processing()">Start</button>
+  <button class="js-processing-finished" >Start</button>
   
   <!-- 12e -->
-   <button onclick="displayAdded()
-   " class="js-add2Cart">Add to cart</button>
+   <button class="js-add2Cart">Add to cart</button>
    <p class="js-addedBtnDisplay"></p>
 
-   <button onclick="displayAdded2()
-   " class="js-add2Cart2">Add to cart</button>
+   <button  class="js-add2Cart2">Add to cart</button>
    <p class="js-addedBtnDisplay2"></p>
 
    <br><br>
 
-   <button class="js-addMessage" onclick="addMessage()" >Add Message</button>
-   <button class="js-removeMessage" onclick="removeMessage()">Remove Message</button>
-  <br><br>
+   <!-- <button class="js-addMessage"  >Add Message</button>
+   <button class="js-removeMessage">Remove Message</button>
+  <br><br> -->
 
-  <button onclick="addMessage2()" >Add Message</button>
-  <button onclick="removeMessage2()">Remove Message</button>
+  <button class="js-addMessage2"  >Add Message</button>
+  <button class="js-removeMessage2" >Remove Message</button>
   
   
   <script>
@@ -55,14 +53,19 @@
 
 
     // 12c fuction to change text of button after 1 sec from start to Finished
+    document.querySelector('.js-finished').addEventListener('click', () => {
+      checking()
+    })
     const checking = () => {
       setTimeout(() => {
       document.querySelector('.js-finished').innerText = 'Finished!'
     }, 1000)
     }
 
-
     // 12d function to change text of button from start, processing to finished
+    document.querySelector('.js-processing-finished').addEventListener('click', () => {
+      processing()
+    })
     const processing = () => {
       document.querySelector('.js-processing-finished').innerText = 'Processing...'
     setTimeout(() => {
@@ -72,6 +75,9 @@
 
 
     // 12e. set the add to cart button to display added and remove it after 2 seconds
+    document.querySelector('.js-add2Cart').addEventListener('click', () => {
+      displayAdded()
+    })
     function displayAdded(){
       let addedText = document.querySelector('.js-addedBtnDisplay');
       addedText.innerText = 'Added';
@@ -81,6 +87,10 @@
     }  
 
     //12f
+    document.querySelector('.js-add2Cart2').addEventListener('click', () => {
+      displayAdded2()
+    })
+
     function displayAdded2(){
       clearTimeout()
       let addedText = document.querySelector('.js-addedBtnDisplay2');
@@ -111,6 +121,13 @@
     //   }
     // }, 1000)
 
+    // document.querySelector('.js-addMessage').addEventListener('click', () => {
+    //   addMessage()
+    // })
+    // document.querySelector('.js-removeMessage').addEventListener('click', () => {
+    //   removeMessage()
+    // })
+    
     // const addMessage = () => {
     //   message ++;
     // }
@@ -146,6 +163,13 @@
       clearInterval(intervalId)
       document.title = "App"
     }
+
+    document.querySelector('.js-addMessage2').addEventListener('click', () => {
+      addMessage2()
+    })
+    document.querySelector('.js-removeMessage2').addEventListener('click', () => {
+      removeMessage2()
+    })
   
 
     const addMessage2 = () => {
@@ -242,7 +266,7 @@
 
     console.log(removeFirstTwoEgg(['egg','apple','egg','egg','ham']))
 
-
+    
 
   </script>
   
